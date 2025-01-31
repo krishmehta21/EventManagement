@@ -1,0 +1,49 @@
+<!-- logged_out.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logged Out</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+    <style>
+      /* Additional CSS styles for the logged_out page */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+        text-align: center;
+        padding: 50px;
+      }
+
+      .message {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .login-button {
+        display: inline-block;
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 20px;
+      }
+
+      .login-button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="message">
+      <p>You have been logged out.</p>
+      <a href="{% url 'login' %}" class="login-button">Login</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+    <!-- Additional CSS styles or links to external stylesheets -->
+    <style>
+      /* Add custom CSS styles for login page */
+      body {
+        background-color: #f0f0f0; /* Set background color */
+        font-family: Arial, sans-serif; /* Set font family */
+      }
+
+      form {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff; /* Set background color */
+        border-radius: 5px; /* Add border radius for rounded corners */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle effect */
+      }
+
+      h2 {
+        text-align: center; /* Center align the heading */
+        margin-bottom: 20px; /* Add some space below the heading */
+        color: #007bff; /* Set heading color */
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box; /* Ensure padding and border are included in width */
+      }
+
+      button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff; /* Set background color */
+        color: #fff; /* Set text color */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #0056b3; /* Change background color on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <form method="post">
+      {% csrf_token %}
+      <h2>Login</h2>
+      <!-- Display form fields using as_table -->
+      {{ form.as_table }}
+      <button type="submit">Login</button>
+    </form>
+
+    <!-- Register button -->
+    <a href="{% url 'create_profile' %}">Register</a>
+  </body>
+</html>

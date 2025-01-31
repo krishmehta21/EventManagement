@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Profile</title>
+    <!-- Add any CSS links or stylesheets here -->
+  </head>
+  <body>
+    <h1>Create Your Profile</h1>
+    <form method="post">
+      {% csrf_token %}
+      <!-- Add form fields for user information -->
+      <label for="username">Username:</label><br />
+      <input type="text" id="username" name="username" required /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required /><br />
+
+      <!-- Add form fields for profile information -->
+      <label for="bio">Bio:</label><br />
+      <textarea id="bio" name="bio" rows="4" cols="50"></textarea><br />
+      <!-- Add more fields as needed -->
+
+      <button type="submit">Create Profile</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+/* Reset default browser styles */
+html,
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  color: #333;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Layout */
+.container {
+  max-width: 800px;
+  margin: 20px auto; /* Add margin to center the container */
+  padding: 20px;
+  border: 1px solid #ccc; /* Add border for better separation */
+  border-radius: 10px; /* Add border radius for rounded corners */
+}
+
+/* Additional styles for Event Detail page */
+.container.event-detail {
+  padding: 30px; /* Increase padding for event detail page */
+}
+
+.container.event-detail h1 {
+  font-size: 28px; /* Increase font size for event detail page title */
+  margin-bottom: 20px; /* Add bottom margin for event detail page title */
+}
+
+.container.event-detail p {
+  margin-bottom: 10px; /* Add bottom margin for event detail page paragraphs */
+}
+
+/* Navigation styles */
+nav {
+  background-color: #f4f4f4;
+  padding: 15px 0; /* Add padding to the top and bottom */
+  border: 2px solid black; /* Add border around the menu bar */
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+  padding: 10px 20px; /* Add padding to all sides of the nav bar buttons */
+  border: 2px solid black; /* Add border around menu options */
+  border-radius: 5px; /* Add border radius for rounded corners */
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  display: inline-block; /* Ensure the entire area is clickable */
+}
+
+nav ul li a:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+}
+
+footer {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 20px; /* Add margin to separate footer from content */
+}
+
+/* static/styles.css */
+/* static/styles.css */
+
+/* Typography */
+.description {
+  font-style: italic; /* Italicize the description */
+  font-weight: normal; /* Reset font weight to normal */
+  color: #333; /* Change text color for description */
+  margin-top: 5px; /* Add some space above the description */
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+}

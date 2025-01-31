@@ -1,0 +1,83 @@
+<!-- base.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Other meta tags and title -->
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-WxTxFnZ9F7BWHk+MmLqZC4c8TvfkzWRgjeiQNMFxkVwWNUfh7TK5I7lGwYNKhmAit5AMj5IodC8tlSCo3+v1jA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Link to your CSS file -->
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'event_list' %}">Events</a></li>
+        <!-- Add more navigation links as needed -->
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+        <!-- Link to profile page -->
+        <li class="profile-icon">
+          <button onclick="myFunction()" class="dropbtn">
+            <img
+              src="{% static 'profile-user.png' %}"
+              alt="User Icon"
+              class="profile-icon-img"
+            />
+          </button>
+          <!-- Dropdown content -->
+          <!-- Dropdown content -->
+
+          <!-- Dropdown content -->
+          <div id="myDropdown" class="dropdown-content">
+            <form action="{% url 'logout' %}" method="post">
+              {% csrf_token %}
+              <button type="submit">Logout</button>
+            </form>
+          </div>
+        </li>
+        {% else %}
+        <li><a href="{% url 'login' %}">Login</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+
+    <!-- Content block -->
+    <div class="content">{% block content %} {% endblock %}</div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Event Management System</p>
+    </footer>
+
+    <script>
+      /* When the user clicks on the button,
+      toggle between hiding and showing the dropdown content */
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function (event) {
+        if (!event.target.matches(".dropbtn")) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

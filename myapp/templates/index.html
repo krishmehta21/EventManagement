@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block content %}
+<!-- Load static tag at the top of the block -->
+{% load static %}
+
+<!-- Event Cards -->
+<div class="container">
+  <h1>Welcome to Event Management System</h1>
+  <p>This is the homepage of our Event Management System.</p>
+
+  <!-- Iterate over events and display event cards -->
+  {% for event in events %}
+  <div class="event-card">
+    <h2>{{ event.title }}</h2>
+    <p>Venue: {{ event.venue }}</p>
+    <p>Time: {{ event.time }}</p>
+    <a href="{% url 'event_detail' event_id=event.id %}" class="btn"
+      >View Details</a
+    >
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <h1>Welcome, {{ user_profile.user.username }}</h1>
+  <p>Email: {{ user_profile.user.email }}</p>
+
+  {% if user_profile %}
+  <!-- Display profile information if profile exists -->
+  <h2>User Profile Details</h2>
+  <p>Bio: {{ user_profile.bio }}</p>
+  <!-- Add more profile fields as needed -->
+  {% else %}
+  <!-- If no profile is found, prompt the user to create a profile -->
+  <p>
+    No profile found. Please create your profile
+    <a href="{% url 'create_profile' %}">here</a>.
+  </p>
+  {% endif %}
+
+  <!-- Add any additional content or functionality here -->
+</div>
+{% endblock %}
